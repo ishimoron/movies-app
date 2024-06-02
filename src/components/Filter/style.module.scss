@@ -1,0 +1,28 @@
+.genreSelect {
+	height: 50px;
+	border: 1px solid rgba(255, 255, 255, 0.05);
+	background-color: #28282d;
+	border-radius: 8px;
+	padding: 15px 30px;
+	font-size: 14px;
+	font-weight: 400;
+	color: #fff;
+	margin: 0 10px;
+}
+
+.resetFilter {
+	border: 1px solid rgba(255, 255, 255, 0.05);
+	background-color: #28282d;
+	border-radius: 8px;
+	font-size: 14px;
+	font-weight: 400;
+	color: #fff;
+	padding: 10px 20px;
+	cursor: pointer;
+}
+
+@media (max-width: 725px) {
+	.genreSelect {
+		margin: 20px 20px 20px 0;
+	}
+}

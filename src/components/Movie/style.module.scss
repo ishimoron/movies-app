@@ -1,0 +1,155 @@
+@import '../../styles/globals';
+
+.container {
+	width: 100%;
+	min-height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: relative;
+	color: white;
+}
+
+.background {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-size: cover;
+	background-position: center;
+	opacity: 0.4;
+	z-index: 1;
+}
+
+.movieContent {
+	margin: 20px 0;
+	width: 800px;
+	background-color: #1e1e1e;
+	border-radius: 10px;
+	position: relative;
+	z-index: 2;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	box-shadow: $box-shadow;
+}
+
+.content {
+	padding: 20px;
+}
+.movieRating,
+.genreText,
+.runningText,
+.budget,
+.countryText,
+.releaseDate {
+	margin: 2px 0;
+}
+//  {
+// 	margin: 2px 0;
+// }
+.adult {
+	width: 40px;
+	height: 30px;
+	margin: 5px 0 0 15px;
+	padding: 5px;
+	border-radius: 5px;
+	background-color: #333;
+}
+
+.header {
+	display: flex;
+}
+
+.poster {
+	width: 200px;
+	height: 300px;
+	border-radius: $border-radius;
+	margin-right: 20px;
+}
+
+.title {
+	font-size: 2em;
+	margin: 0 0 20px 0;
+	font-weight: bold;
+}
+
+.info {
+	display: flex;
+	flex-direction: column;
+}
+
+.overview {
+	margin-top: 20px;
+	font-size: 20px;
+	line-height: 1.5;
+}
+
+.movieRating {
+	&:hover {
+		color: $primary-color;
+		cursor: default;
+	}
+}
+
+.genre,
+.country {
+	color: $primary-color;
+	margin-right: 5px;
+}
+
+.budget {
+	display: flex;
+	align-items: center;
+}
+
+.learnMore {
+	color: $primary-color;
+	margin-left: 5px;
+}
+
+.tagline {
+	margin: 15px 0;
+	font-weight: bold;
+}
+
+.companyList {
+	display: flex;
+	align-items: center;
+	margin-top: 10px;
+	flex-wrap: wrap;
+}
+
+.company img {
+	width: 100px;
+	height: auto;
+	margin: 20px;
+}
+
+@media (max-width: 850px) {
+	.movieContent {
+		width: 90%;
+	}
+}
+
+@media (max-width: 769px) {
+	.movieContent {
+		width: 90%;
+	}
+	.header {
+		flex-direction: column;
+	}
+	.title {
+		margin-top: 20px;
+	}
+}
+
+@media (max-width: 426px) {
+	.header {
+		align-items: center;
+	}
+	.companyList {
+		justify-content: center;
+	}
+}

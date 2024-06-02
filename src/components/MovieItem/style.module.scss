@@ -1,0 +1,135 @@
+@import '../../styles/globals';
+
+.movieCard {
+	display: flex;
+	background-color: #1e1e1e;
+	border-radius: 10px;
+	overflow: hidden;
+	box-shadow: $box-shadow;
+
+	.moviePoster img {
+		width: 200px;
+		height: auto;
+		-o-object-fit: cover;
+		object-fit: cover;
+	}
+
+	.moviePoster {
+		position: relative;
+		height: 300px;
+
+		&:before {
+			content: '';
+			position: absolute;
+			display: block;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			background: $background-gradient;
+			z-index: 1;
+			opacity: 0;
+			transition: $transition;
+			-webkit-transition: $transition;
+			-moz-transition: $transition;
+			-ms-transition: $transition;
+			-o-transition: $transition;
+		}
+		&:hover::before {
+			opacity: 0.6;
+		}
+
+		&:hover {
+			.itemPlay {
+				opacity: 1;
+				transform: scale(1.5);
+				-webkit-transform: scale(1.5);
+				-moz-transform: scale(1.5);
+				-ms-transform: scale(1.5);
+				-o-transform: scale(1.5);
+			}
+		}
+
+		.itemPlay {
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			opacity: 0;
+			z-index: 2;
+			color: #fff;
+			margin: -28px 0 0 -28px;
+			transition: $transition;
+			-webkit-transition: $transition;
+			-moz-transition: $transition;
+			-ms-transition: $transition;
+			-o-transition: $transition;
+		}
+
+		.itemPlay svg {
+			width: 50px;
+			height: 50px;
+		}
+	}
+
+	.movieDetails {
+		padding: 10px;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+
+		.adult {
+			width: 40px;
+			padding: 5px;
+			border-radius: 5px;
+			background-color: #333;
+		}
+
+		.movieTitle {
+			font-size: 24px;
+			font-weight: bold;
+			color: #fff;
+			margin-bottom: 10px;
+			text-decoration: none;
+
+			&:hover {
+				color: $primary-color;
+			}
+		}
+
+		.movieOverview {
+			font-size: 17px;
+			color: $secondary-color;
+			margin-bottom: 10px;
+		}
+
+		.movieInfo {
+			display: flex;
+			justify-content: space-between;
+			font-size: 12px;
+			color: $secondary-color;
+
+			.movieRating,
+			.dateRelease {
+				background-color: #333;
+				padding: 5px 10px;
+				border-radius: 5px;
+
+				&:hover {
+					color: $primary-color;
+					cursor: default;
+				}
+			}
+		}
+	}
+}
+
+@media (max-width: 426px) {
+	.movieCard {
+		flex-direction: column;
+	}
+	.moviePoster {
+		display: flex;
+		justify-content: center;
+		padding-top: 10px;
+	}
+}
